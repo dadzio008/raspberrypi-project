@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: clojure-interop:javax.swing:1.0.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/clojure-interop/javax.swing/1.0.5/javax.swing-1.0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/clojure-interop/javax.swing/1.0.5/javax.swing-1.0.5-javadoc.jar!/" />
+      <root url="https://mvnrepository.com/artifact/clojure-interop/javax.swing" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/clojure-interop/javax.swing/1.0.5/javax.swing-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

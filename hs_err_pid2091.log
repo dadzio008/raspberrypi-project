@@ -1,0 +1,23 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x70d2e364, pid=2091, tid=2828
+#
+# JRE version: OpenJDK Runtime Environment (13.0+33) (build 13-BellSoft+33)
+# Java VM: OpenJDK Server VM (13-BellSoft+33, mixed mode, g1 gc, linux-arm)
+# Problematic frame:
+# C  [libpigpio.so.1+0x13364]  gpioWrite+0x138
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -javaagent:/home/pi/Desktop/idea-IC-202.7660.26/lib/idea_rt.jar=37325:/home/pi/Desktop/idea-IC-202.7660.26/bin -Dfile.encoding=UTF-8 --module-path=/root/IdeaProjects/pi4j-example-minimal/target/classes:/root/.m2/repository/org/slf4j/slf4j-api/2.0.0-alpha0/slf4j-api-2.0.0-alpha0.jar:/root/.m2/repository/org/slf4j/slf4j-simple/2.0.0-alpha0/slf4j-simple-2.0.0-alpha0.jar:/root/.m2/repository/com/pi4j/pi4j-core/2.0-SNAPSHOT/pi4j-core-2.0-20210326.183037-28.jar:/root/.m2/repository/com/pi4j/pi4j-plugin-raspberrypi/2.0-SNAPSHOT/pi4j-plugin-raspberrypi-2.0-20210326.183059-37.jar:/root/.m2/repository/com/pi4j/pi4j-plugin-pigpio/2.0-SNAPSHOT/pi4j-plugin-pigpio-2.0-20210326.183053-37.jar:/root/.m2/repository/com/pi4j/pi4j-library-pigpio/2.0-SNAPSHOT/pi4j-library-pigpio-2.0-20210326.183020-46.jar -Djdk.module.main=com.pi4j.example com.pi4j.example/com.pi4j.example.Test
+
+Host: rev 3 (v7l), 4 cores, 3G, Raspbian GNU/Linux 10 (buster)
