@@ -9,17 +9,17 @@ import static java.lang.Thread.sleep;
 
 public class Run {
     public Run() {
-        String timeMorning = "19:06";
+        String timeMorning = "19:47";
         String timeEvening = "21:30";
         String pattern = "HH:mm";
         Date time = Calendar.getInstance().getTime();
         DateFormat df = new SimpleDateFormat(pattern);
         String timeAsString = df.format(time);
         if (timeAsString.equals(timeEvening)){
-            Shade.shadeClosingEvening();
+            Shade.shadeClosing();
             System.out.println("rolety zostały zamknięte");
         }else if (timeAsString.equals(timeMorning)){
-            Shade.shadeOpeningMorning();
+            Shade.shadeOpening();
             System.out.println("rolety zostały otwarte");
         }else {
             System.err.println("Coś poszło nie tak");

@@ -21,7 +21,7 @@ public class Shade {
                 .provider("pigpio-digital-output");
         var shadeClose = pi4j.create(closeShade);
 
-            shadeClose.low();
+            shadeClose.pulse(20,TimeUnit.SECONDS);
 
         }
     public static void shadeOpening(){
@@ -35,37 +35,7 @@ public class Shade {
                 .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
         var shadeOpen = pi4j.create(openShade);
-        shadeOpen.high();
-
-    }
-    public static void shadeClosingEvening() {
-        final var console = new Console();
-        var pi4j = Pi4J.newAutoContext();
-        var shadeClosingEve = DigitalOutput.newConfigBuilder(pi4j)
-                .id("roleta")
-                .name("Przełącznik")
-                .address(PIN_ROL)
-                .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
-                .provider("pigpio-digital-output");
-        var closingShadeEve = pi4j.create(shadeClosingEve);
-
-        closingShadeEve.low();
-    }
-    public static void shadeOpeningMorning() {
-        final var console = new Console();
-        var pi4j = Pi4J.newAutoContext();
-        var shadeOpeningMor = DigitalOutput.newConfigBuilder(pi4j)
-                .id("roleta")
-                .name("Przełącznik")
-                .address(PIN_ROL)
-                .shutdown(DigitalState.LOW)
-                .initial(DigitalState.LOW)
-                .provider("pigpio-digital-output");
-        var openingShadeMor = pi4j.create(shadeOpeningMor);
-
-        openingShadeMor.high();
-
+        shadeOpen.pulse(20, TimeUnit.SECONDS);
 
     }
 }
