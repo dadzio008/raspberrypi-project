@@ -13,11 +13,7 @@ public class ActionFrame extends JFrame{ //implements Runnable{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
-        try {
-            Thread.sleep(2);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 
 

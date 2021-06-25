@@ -8,9 +8,21 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pi4j-example-minimal" />
       </profile>
+      <profile name="Annotation profile for Unknown" enabled="true">
+        <sourceOutputDir name="../../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="wrapper" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="pi4j-example-minimal" target="11" />
+      <module name="pi4j-example-minimal" target="16" />
+      <module name="wrapper" target="1.5" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="pi4j-example-minimal" options="-parameters" />
+    </option>
   </component>
 </project>
