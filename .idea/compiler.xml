@@ -10,13 +10,13 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="pi4j-example-minimal" target="16" />
+      <module name="pi4j-example-minimal" target="11" />
       <module name="wrapper" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="pi4j-example-minimal" options="-parameters" />
+      <module name="pi4j-example-minimal" options="" />
     </option>
   </component>
 </project>

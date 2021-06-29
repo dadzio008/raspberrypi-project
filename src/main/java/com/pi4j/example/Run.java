@@ -45,7 +45,7 @@ public class Run extends Thread {
                 Run run1 = new Run();
 
                 run1.start();
-                EventQueue.invokeLater(() -> new ActionFrame());
+                EventQueue.invokeLater(ActionFrame::new);
             }
         }
 
