@@ -16,14 +16,14 @@ public class Run extends Thread {
     public void run() {
         for (int i = 1; i < 5; i--) {
             try {
-                Thread.sleep(500);
+                Thread.sleep(50);
 
             } catch (InterruptedException e) {
                 System.out.println(e);
             }
 
-            String timeMorning = "19:18:00";
-            String timeEvening = "23:12:00";
+            String timeMorning = "05:15:00";
+            String timeEvening = "20:30:00";
             String pattern = "HH:mm:ss";
             Date time = Calendar.getInstance().getTime();
             DateFormat df = new SimpleDateFormat(pattern);
@@ -41,19 +41,11 @@ public class Run extends Thread {
             }
         }
     }
-            public static void main (String args[]){
-                Run run1 = new Run();
+    public static void main (String args[]){
+        Run run1 = new Run();
 
-                run1.start();
-                EventQueue.invokeLater(ActionFrame::new);
-            }
-        }
-
-
-
-
-
-
-
-
+        run1.start();
+        EventQueue.invokeLater(ActionFrame::new);
+    }
+}
 

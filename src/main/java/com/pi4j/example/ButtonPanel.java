@@ -1,5 +1,8 @@
 package com.pi4j.example;
 
+import com.pi4j.example.shadeintime.AllShadeClose;
+import com.pi4j.example.shadeintime.AllShadeOpen;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,8 +10,8 @@ import java.awt.event.ActionListener;
 
 public class ButtonPanel extends JPanel implements ActionListener {
 
-    public static final int HEIGHT = 200;
-    public static final int WIDTH = 500;
+    public static final int HEIGHT = 280;
+    public static final int WIDTH = 380;
     private final JButton buttonOpenBedroom;
     private final JButton buttonCloseBedroom;
     private final JButton buttonOpenLivingRoom;
@@ -19,6 +22,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
     private final JButton buttonCloseBathroom;
     private final JButton buttonOpenUpperRoom;
     private final JButton buttonCloseUpperRoom;
+    private final JButton buttonOpenAllShades;
+    private final JButton buttonCloseAllShades;
 
 
     public ButtonPanel() {
@@ -32,6 +37,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
         buttonCloseBathroom = new JButton("Bathroom Close Shade");
         buttonOpenUpperRoom = new JButton("Upper Room Open Shade");
         buttonCloseUpperRoom = new JButton("Upper Room Close Shade");
+        buttonOpenAllShades = new JButton("Close All Shades");
+        buttonCloseAllShades = new JButton("Open All Shades");
 
         buttonCloseBedroom.addActionListener(this);
         buttonOpenBedroom.addActionListener(this);
@@ -43,6 +50,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
         buttonCloseBathroom.addActionListener(this);
         buttonOpenUpperRoom.addActionListener(this);
         buttonCloseUpperRoom.addActionListener(this);
+        buttonOpenAllShades.addActionListener(this);
+        buttonCloseAllShades.addActionListener(this);
 
         setLayout(new FlowLayout());
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -56,6 +65,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
         add(buttonCloseBathroom);
         add(buttonOpenUpperRoom);
         add(buttonCloseUpperRoom);
+        add(buttonOpenAllShades);
+        add(buttonCloseAllShades);
 
 
     }
@@ -84,6 +95,10 @@ public class ButtonPanel extends JPanel implements ActionListener {
             Shade.shadeOperation(16);
         } else if (buttonCloseUpperRoom == source) {
             Shade.shadeOperation(12);
+        } else if (buttonOpenAllShades == source){
+            AllShadeOpen.shadeOpening();
+        } else if (buttonCloseAllShades == source){
+            AllShadeClose.shadeClosing();
         }
     }
 
