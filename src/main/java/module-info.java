@@ -33,6 +33,10 @@ module com.pi4j.example {
     requires org.slf4j;
     requires org.slf4j.simple;
     requires java.desktop;
+    requires spring.boot;
+    requires spring.boot.autoconfigure;
+//    requires servlet.api;
+//    requires javaee.web.api;
 
     uses com.pi4j.extension.Extension;
     uses com.pi4j.provider.Provider;

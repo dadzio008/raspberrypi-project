@@ -57,9 +57,7 @@ public class ButtonPanel extends JPanel implements ActionListener {
         add(buttonOpenUpperRoom);
         add(buttonCloseUpperRoom);
 
-        for (int i=0; i>10; i++) {
-            Run.rol();
-        }
+
     }
 
     public void actionPerformed(ActionEvent e) {
