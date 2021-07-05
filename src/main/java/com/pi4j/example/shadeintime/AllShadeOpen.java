@@ -13,43 +13,43 @@ public class AllShadeOpen {
         var pi4j = Pi4J.newAutoContext();
 
         var openShadeBedRoom = DigitalOutput.newConfigBuilder(pi4j)
-                .id("Roleta")
-                .name("Przełącznik")
+                .id("Roleta5")
+                .name("Przełącznik5")
                 .address(21)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
 
         var openShadeLivingRoom = DigitalOutput.newConfigBuilder(pi4j)
-                .id("Roleta")
-                .name("Przełącznik")
+                .id("Roleta6")
+                .name("Przełącznik6")
                 .address(26)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
 
         var openShadeDiningRoom = DigitalOutput.newConfigBuilder(pi4j)
-                .id("Roleta")
-                .name("Przełącznik")
+                .id("Roleta7")
+                .name("Przełącznik7")
                 .address(13)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
 
         var openShadeBathRoom = DigitalOutput.newConfigBuilder(pi4j)
-                .id("Roleta")
-                .name("Przełącznik")
+                .id("Roleta8")
+                .name("Przełącznik8")
                 .address(27)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
 
         var openShadeUpperRoom = DigitalOutput.newConfigBuilder(pi4j)
-                .id("Roleta")
-                .name("Przełącznik")
+                .id("Roleta9")
+                .name("Przełącznik9")
                 .address(16)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
 
         var shadeOpenBedroom = pi4j.create(openShadeBedRoom);
@@ -58,18 +58,23 @@ public class AllShadeOpen {
         var shadeOpenBathRoom = pi4j.create(openShadeBathRoom);
         var shadeOpenUpperRoom = pi4j.create(openShadeUpperRoom);
 
+        
+
+
+        try {
+            shadeOpenBedroom.low();
+            shadeOpenLivingRoom.low();
+            shadeOpenDiningRoom.low();
+            shadeOpenBathRoom.low();
+            shadeOpenUpperRoom.low();
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         shadeOpenBedroom.high();
         shadeOpenLivingRoom.high();
         shadeOpenDiningRoom.high();
         shadeOpenBathRoom.high();
         shadeOpenUpperRoom.high();
-
-        shadeOpenBedroom.pulse(20, TimeUnit.SECONDS);
-        shadeOpenLivingRoom.pulse(20, TimeUnit.SECONDS);
-        shadeOpenDiningRoom.pulse(20, TimeUnit.SECONDS);
-        shadeOpenBathRoom.pulse(20, TimeUnit.SECONDS);
-        shadeOpenUpperRoom.pulse(20, TimeUnit.SECONDS);
-
-
     }
 }
