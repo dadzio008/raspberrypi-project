@@ -8,8 +8,6 @@ import com.pi4j.util.Console;
 import java.util.concurrent.TimeUnit;
 
 public class Shade {
-//    private static final int PIN_ROLO = new Pin;
-//    private static final int PIN_ROLC = 20;
     public static void shadeOperation(int zmienna){
         final var console = new Console();
         var pi4j = Pi4J.newAutoContext();
@@ -18,15 +16,18 @@ public class Shade {
                 .name("Przełącznik")
                 .address(zmienna)
                 .shutdown(DigitalState.HIGH)
-                .initial(DigitalState.HIGH)
+                .initial(DigitalState.LOW)
                 .provider("pigpio-digital-output");
         var move = pi4j.create(shadeMove);
-        move.low();
+
+
         try {
+            move.low();
             Thread.sleep(20000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        move.high();
 
     }
 
