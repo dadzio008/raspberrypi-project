@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
 
 public class ButtonPanel extends JPanel implements ActionListener {
 
-    public static final int HEIGHT = 280;
-    public static final int WIDTH = 380;
+    public static final int HEIGHT = 200;
+    public static final int WIDTH = 500;
     private final JButton buttonOpenBedroom;
     private final JButton buttonCloseBedroom;
     private final JButton buttonOpenLivingRoom;
@@ -37,8 +37,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
         buttonCloseBathroom = new JButton("Bathroom Close Shade");
         buttonOpenUpperRoom = new JButton("Upper Room Open Shade");
         buttonCloseUpperRoom = new JButton("Upper Room Close Shade");
-        buttonOpenAllShades = new JButton("Close All Shades");
-        buttonCloseAllShades = new JButton("Open All Shades");
+        buttonOpenAllShades = new JButton("Open All Shades");
+        buttonCloseAllShades = new JButton("Close All Shades");
 
         buttonCloseBedroom.addActionListener(this);
         buttonOpenBedroom.addActionListener(this);
@@ -55,8 +55,8 @@ public class ButtonPanel extends JPanel implements ActionListener {
 
         setLayout(new FlowLayout());
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
-        add(buttonCloseBedroom);
         add(buttonOpenBedroom);
+        add(buttonCloseBedroom);
         add(buttonOpenLivingRoom);
         add(buttonCloseLivingRoom);
         add(buttonOpenDiningRoom);
@@ -67,7 +67,6 @@ public class ButtonPanel extends JPanel implements ActionListener {
         add(buttonCloseUpperRoom);
         add(buttonOpenAllShades);
         add(buttonCloseAllShades);
-
 
     }
 
@@ -96,10 +95,10 @@ public class ButtonPanel extends JPanel implements ActionListener {
         } else if (buttonCloseUpperRoom == source) {
             Shade.shadeOperation(12);
         } else if (buttonOpenAllShades == source){
-            AllShadeOpen.shadeOpening();
+        AllShadeOpen.shadeOpening();
         } else if (buttonCloseAllShades == source){
-            AllShadeClose.shadeClosing();
-        }
+        AllShadeClose.shadeClosing();
+    }
     }
 
 }
